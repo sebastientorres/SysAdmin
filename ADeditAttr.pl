@@ -41,7 +41,7 @@ while(<@computerobj>){
 # +---------------------------------------------------------------------+
 
 # Find out who is logged in to the X session, display :0
-chomp($user = `/usr/bin/who |/bin/grep ":0" | /usr/bin/awk '{print \$1}' | /usr/bin/uniq`);
+chomp($login = `/usr/bin/who |/bin/grep ":0" | /usr/bin/awk '{print \$1}' | /usr/bin/uniq`);
 
 # Query rpm to find out if PBIS or Likewise is installed
 $lworpbis = `rpm -qa | egrep \"pbis|likewise\"`;
