@@ -107,6 +107,7 @@ use File::Path;
 			($command, $userTime, $systemTime, $elapsedTime, $uid, $gid, $mem, $io, $submittedTime) = split(/\|/, $tmpLine);
 			# Get rid of the whitespace at the beggining of $elapsedTime			
 			$elapsedTime =~ s/^\s+//;
+			$elapsedTime = $elapsedTime/100;
 			$systemTime =~ s/^\s+//;
 			$userTime =~ s/^\s+//;
 			# Get rid of trailing whitespace at the end of $command
